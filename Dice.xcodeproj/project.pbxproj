@@ -15,6 +15,8 @@
 		6DD7B92E1A026C1E0099C860 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DD7B92D1A026C1E0099C860 /* Images.xcassets */; };
 		6DD7B9311A026C1E0099C860 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DD7B92F1A026C1E0099C860 /* LaunchScreen.xib */; };
 		6DD7B93D1A026C1E0099C860 /* DiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD7B93C1A026C1E0099C860 /* DiceTests.m */; };
+		6DD7B9491A026C830099C860 /* DiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD7B9471A026C830099C860 /* DiceTableViewCell.m */; };
+		6DD7B94A1A026C830099C860 /* DiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DD7B9481A026C830099C860 /* DiceTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,9 @@
 		6DD7B9361A026C1E0099C860 /* DiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD7B93B1A026C1E0099C860 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DD7B93C1A026C1E0099C860 /* DiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiceTests.m; sourceTree = "<group>"; };
+		6DD7B9461A026C830099C860 /* DiceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiceTableViewCell.h; sourceTree = "<group>"; };
+		6DD7B9471A026C830099C860 /* DiceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiceTableViewCell.m; sourceTree = "<group>"; };
+		6DD7B9481A026C830099C860 /* DiceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiceTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +97,9 @@
 				6DD7B92F1A026C1E0099C860 /* LaunchScreen.xib */,
 				6DD7B9241A026C1E0099C860 /* Dice.xcdatamodeld */,
 				6DD7B91D1A026C1E0099C860 /* Supporting Files */,
+				6DD7B9461A026C830099C860 /* DiceTableViewCell.h */,
+				6DD7B9471A026C830099C860 /* DiceTableViewCell.m */,
+				6DD7B9481A026C830099C860 /* DiceTableViewCell.xib */,
 			);
 			path = Dice;
 			sourceTree = "<group>";
@@ -204,6 +212,7 @@
 			files = (
 				6DD7B92C1A026C1E0099C860 /* Main.storyboard in Resources */,
 				6DD7B9311A026C1E0099C860 /* LaunchScreen.xib in Resources */,
+				6DD7B94A1A026C830099C860 /* DiceTableViewCell.xib in Resources */,
 				6DD7B92E1A026C1E0099C860 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DD7B9491A026C830099C860 /* DiceTableViewCell.m in Sources */,
 				6DD7B9231A026C1E0099C860 /* AppDelegate.m in Sources */,
 				6DD7B9201A026C1E0099C860 /* main.m in Sources */,
 				6DD7B9291A026C1E0099C860 /* ViewController.m in Sources */,
