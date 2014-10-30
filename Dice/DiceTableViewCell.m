@@ -43,24 +43,24 @@
     
     DiceTableViewCellScrollDirection scrollDirection = [(NSNumber *)notificationObject integerValue];
     
-    NSInteger constant = self.constraintVerticalCenter.constant;
+    CGFloat constant = self.constraintVerticalCenter.constant;
     
     switch (scrollDirection) {
-        case ScrollDirectionDown:
+        case ScrollDirectionUp:
         {
-            constant--;
-            if (-20 > constant)
+            constant -= DiceTableViewOffsetFactor;
+            if (-1 * DiceTableViewMaximumOffset > constant)
             {
-                constant = -20;
+                constant = -1 * DiceTableViewMaximumOffset;
             }
         }
         break;
-        case ScrollDirectionUp:
+        case ScrollDirectionDown:
         {
-            constant++;
-            if (20 < constant)
+            constant += DiceTableViewOffsetFactor;
+            if (DiceTableViewMaximumOffset < constant)
             {
-                constant = 20;
+                constant = DiceTableViewMaximumOffset;
             }
         }
         default:

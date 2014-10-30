@@ -18,6 +18,8 @@ typedef enum DiceTableViewCellScrollDirection : NSInteger {
 } DiceTableViewCellScrollDirection;
 
 #define DiceTableViewCellDirectionNotification @"DiceTableViewCellDirectionNotification"
+#define DiceTableViewMaximumOffset 40.0f
+#define DiceTableViewOffsetFactor 0.25f
 
 @interface DiceTableViewCell : UITableViewCell
 
