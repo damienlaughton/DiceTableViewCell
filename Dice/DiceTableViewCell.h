@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum ScrollDirection {
+    ScrollDirectionNone,
+    ScrollDirectionRight,
+    ScrollDirectionLeft,
+    ScrollDirectionUp,
+    ScrollDirectionDown,
+    ScrollDirectionCrazy,
+} ScrollDirection;
+
 @interface DiceTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewBackground;

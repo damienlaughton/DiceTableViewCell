@@ -9,9 +9,10 @@
 #import "ViewController.h"
 #import "DiceTableViewCell.h"
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (assign, nonatomic) CGPoint lastContentOffset;
 
 @end
 
@@ -52,6 +53,33 @@
     cell.imageViewBackground.image = image;
     
     return cell;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView;
+{
+    ScrollDirection scrollDirection = ScrollDirectionNone;
+    
+    if (self.lastContentOffset.x > scrollView.contentOffset.x)
+    {
+        scrollDirection = ScrollDirectionRight;
+    }
+    else if (self.lastContentOffset.x < scrollView.contentOffset.x)
+    {
+        scrollDirection = ScrollDirectionLeft;
+    }
+    else if (self.lastContentOffset.y > scrollView.contentOffset.y)
+    {
+        scrollDirection = ScrollDirectionDown;
+        NSLog(@"DOWN");
+    }
+    else if (self.lastContentOffset.y < scrollView.contentOffset.y)
+    {
+        scrollDirection = ScrollDirectionUp;
+        NSLog(@"UP");
+    }
+    
+    self.lastContentOffset = scrollView.contentOffset;
+
 }
 
 @end
