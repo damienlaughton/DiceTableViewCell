@@ -31,6 +31,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="constraintVerticalCenter" destination="bIT-Fh-swF" id="0da-xd-HQt"/>
                 <outlet property="imageViewBackground" destination="yT9-eD-adJ" id="ZVW-t4-JF5"/>
             </connections>
             <point key="canvasLocation" x="389" y="147"/>

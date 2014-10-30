@@ -8,10 +8,22 @@
 
 #import "DiceTableViewCell.h"
 
+@interface DiceTableViewCell ()
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintVerticalCenter;
+
+@end
+
 @implementation DiceTableViewCell
 
+- (void)dealloc;
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)awakeFromNib {
-    // Initialization code
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDiceTableViewCellDirectionNotification:) name:DiceTableViewCellDirectionNotification object:nil];
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -23,6 +35,43 @@
 - (void)layoutSubviews;
 {
 
+}
+
+- (void)handleDiceTableViewCellDirectionNotification:(NSNotification *)notification;
+{
+    id notificationObject = notification.object;
+    
+    DiceTableViewCellScrollDirection scrollDirection = [(NSNumber *)notificationObject integerValue];
+    
+    NSInteger constant = self.constraintVerticalCenter.constant;
+    
+    switch (scrollDirection) {
+        case ScrollDirectionDown:
+        {
+            constant--;
+            if (-20 > constant)
+            {
+                constant = -20;
+            }
+        }
+        break;
+        case ScrollDirectionUp:
+        {
+            constant++;
+            if (20 < constant)
+            {
+                constant = 20;
+            }
+        }
+        default:
+        {
+//            Do Nothing
+        }
+        break;
+    }
+    
+    self.constraintVerticalCenter.constant = constant;
+    
 }
 
 @end

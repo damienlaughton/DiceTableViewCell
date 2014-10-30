@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum ScrollDirection {
-    ScrollDirectionNone,
+typedef enum DiceTableViewCellScrollDirection : NSInteger {
+    ScrollDirectionNone = 0,
     ScrollDirectionRight,
     ScrollDirectionLeft,
     ScrollDirectionUp,
     ScrollDirectionDown,
     ScrollDirectionCrazy,
-} ScrollDirection;
+} DiceTableViewCellScrollDirection;
+
+#define DiceTableViewCellDirectionNotification @"DiceTableViewCellDirectionNotification"
 
 @interface DiceTableViewCell : UITableViewCell
 

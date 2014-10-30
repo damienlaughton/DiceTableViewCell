@@ -57,7 +57,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView;
 {
-    ScrollDirection scrollDirection = ScrollDirectionNone;
+    DiceTableViewCellScrollDirection scrollDirection = ScrollDirectionNone;
     
     if (self.lastContentOffset.x > scrollView.contentOffset.x)
     {
@@ -70,15 +70,24 @@
     else if (self.lastContentOffset.y > scrollView.contentOffset.y)
     {
         scrollDirection = ScrollDirectionDown;
-        NSLog(@"DOWN");
+//        NSLog(@"DOWN");
     }
     else if (self.lastContentOffset.y < scrollView.contentOffset.y)
     {
         scrollDirection = ScrollDirectionUp;
-        NSLog(@"UP");
+//        NSLog(@"UP");
+    }
+    else
+    {
+        scrollDirection = ScrollDirectionCrazy;
     }
     
     self.lastContentOffset = scrollView.contentOffset;
+    
+    id notificationObject = [NSNumber numberWithInteger:scrollDirection];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:DiceTableViewCellDirectionNotification object:notificationObject];
+
 
 }
 
