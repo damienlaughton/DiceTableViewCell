@@ -32,7 +32,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    CGFloat heightForRowAtIndexPath = 100.0f;
+    CGFloat heightForRowAtIndexPath = 160.0f;
     
     return heightForRowAtIndexPath;
 }
@@ -48,7 +48,7 @@
 {
     DiceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DiceTableViewCell" forIndexPath:indexPath];
     
-    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"Unknown%ld", (long)indexPath.row]];
+    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"Album%ld", (long)indexPath.row]];
     
     cell.imageViewBackground.image = image;
     
